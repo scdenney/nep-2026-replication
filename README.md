@@ -4,10 +4,9 @@
 
 **Why Citizens in Divided Societies Are Pressured to Overstate National Pride**
 
-Replication Package: List Experiments on National Pride
 *Denney, Steinhardt, & Bhowmick (2026) &mdash; Nationalism and Ethnic Politics (Routledge)*
 
-[![DOI: Paper](https://img.shields.io/badge/DOI-10.1080%2F13537113.2026.2616954-blue?style=flat-square)](https://doi.org/10.1080/13537113.2026.2616954) [![Open Science](https://img.shields.io/badge/Open_Science-Replication_Materials-brightgreen?style=flat-square&logo=opensourceinitiative&logoColor=white)](https://github.com/scdenney/ID-conformity-replication) [![R](https://img.shields.io/badge/R-%E2%89%A5_4.0-276DC3?style=flat-square&logo=r&logoColor=white)](#requirements)
+[![DOI: Paper](https://img.shields.io/badge/DOI-10.1080%2F13537113.2026.2616954-blue?style=flat-square)](https://doi.org/10.1080/13537113.2026.2616954) [![Open Science](https://img.shields.io/badge/Open_Science-Replication_Materials-brightgreen?style=flat-square&logo=opensourceinitiative&logoColor=white)](https://github.com/scdenney/nep-2026-replication) [![R](https://img.shields.io/badge/R-%E2%89%A5_4.0-276DC3?style=flat-square&logo=r&logoColor=white)](#requirements)
 
 </div>
 
