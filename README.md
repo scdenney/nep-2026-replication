@@ -56,10 +56,10 @@ Each CSV contains **raw survey responses** in the original language (Mandarin/Ko
 | Category | Variables |
 |----------|-----------|
 | **Identifiers** | `response_id` |
-| **List-experiment outcomes** | Treatment arm indicators, item counts |
-| **Direct outcomes** | Direct pride questions (original language) |
-| **Demographics** | `age`/`birth_year`, `gender`, `education`, geographic location |
-| **Identity/political** | Identity strength, ideology, party preference |
+| **List-experiment outcomes** | `list_pride_treatment_arm`, `list_pride_count` (+ sample-specific variants) |
+| **Direct outcomes** | `direct_pride_taiwan`, `direct_pride_korea`, `direct_sk_pride`, `direct_nk_pride` |
+| **Demographics** | `age`/`birth_year`, `gender`, `education_years`/`education_raw`, `city_raw`/`region_raw` |
+| **Identity/political** | `national_identity_strength`, `ideology_raw`/`ideology_scale_raw`, `party_id_raw`/`party_preference_raw` |
 
 All covariate construction (binary indicators, subgroup splits) is performed transparently in `code/01_list_experiments.R`. See `data/dictionaries/` for complete variable definitions.
 
