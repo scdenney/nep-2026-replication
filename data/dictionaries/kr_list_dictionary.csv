@@ -1,0 +1,17 @@
+variable,type,description,used_in_script
+response_id,character,Respondent ID from the raw South Korea survey export,retained background/list context variable
+gender,character,Gender demographic variable.,female indicator
+region_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+age,numeric,Age or year-based demographic variable.,age covariate
+education_raw,character,Raw survey response value (verbatim coding).,eduhigh covariate
+residency_status_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+ideology_scale_raw,character,Raw ideology scale response,political_orientation covariate
+party_id_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+religion_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+direct_pride_korea,character,Direct question on pride in being South Korean,direct binary outcome
+list_pride_count,numeric,List count for pride in being South Korean,list model outcome
+list_pride_treatment_arm,character,Raw treatment assignment for the pride list experiment,treatment indicator
+direct_nksk_maintain,character,Direct question on maintaining North-South separation,retained background/list context variable
+list_nksk_count,numeric,List count for North-South maintenance list experiment,retained background/list context variable
+list_nksk_treatment_arm,character,Raw treatment assignment for North-South maintenance list experiment,retained background/list context variable
+national_identity_strength,numeric,National identity strength scale,strong/weak subgroup split

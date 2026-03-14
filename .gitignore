@@ -1,0 +1,8 @@
+output/
+outputs/
+dataverse/
+.Rhistory
+.RData
+.Rproj.user
+*.Rproj
+data/full_raw_archive/

@@ -1,0 +1,35 @@
+variable,type,description,used_in_script
+response_id,character,Respondent ID from the raw Taiwan survey export,retained background/list context variable
+birth_year_roc,numeric,Birth year in ROC (Minguo) calendar,age covariate construction
+gender,character,Gender demographic variable.,female indicator
+city_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+ideology_raw,character,Self-reported conservative/liberal placement,pol_id covariate
+party_id_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+residency_status_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+cross_strait_preference_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+identity_category_raw,character,Identity self-categorization (Taiwanese/Chinese/both/neither),strong/weak subgroup split
+direct_support_unification,character,Direct question on support for unification,retained background/list context variable
+direct_pride_taiwan,character,Direct question on pride in being Taiwanese,direct binary outcome
+direct_pride_china,character,Direct question on pride in being Chinese,retained background/list context variable
+education_years,numeric,Years of formal education,eduhigh covariate
+employment_status_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+work_type_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+current_status_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+home_language_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+father_origin_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+marital_status_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+social_media_use_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+follows_political_news_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+main_news_source_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+vote_2024_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+social_class_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+list_pride_treatment_indicator,numeric,List experiment treatment indicator/count (List1),List1.n
+list_independence_treatment_indicator,numeric,List-experiment variable.,retained background/list context variable
+list_pride_treatment_arm,character,List-experiment treatment-arm assignment from the survey flow.,retained background/list context variable
+list_independence_treatment_arm,character,List-experiment treatment-arm assignment from the survey flow.,retained background/list context variable
+list_pride_taiwan_treatment_count,numeric,Numeric list-experiment count response.,retained background/list context variable
+list_pride_china_treatment_count,numeric,Numeric list-experiment count response.,retained background/list context variable
+list_pride_control_count,numeric,Numeric list-experiment count response.,retained background/list context variable
+list_pride_taiwan_count,numeric,Observed list count for Taiwan-pride list experiment,list outcome
+list_independence_treatment_count,numeric,Numeric list-experiment count response.,retained background/list context variable
+list_independence_control_count,numeric,Numeric list-experiment count response.,retained background/list context variable

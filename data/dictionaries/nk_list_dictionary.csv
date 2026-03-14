@@ -1,0 +1,27 @@
+variable,type,description,used_in_script
+response_id,character,Respondent ID from the raw North Korean migrant survey export,retained background/list context variable
+gender,character,Gender demographic variable.,female indicator
+birth_year,numeric,Birth year,timenk calculation
+birth_place_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+education_nk_raw,character,Education level in North Korea,preserved SI-relevant covariate source
+father_party_member_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+mother_party_member_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+party_member_raw,character,Whether respondent was a Workers' Party member,retained for SI robustness variants and provenance
+year_defection,numeric,Year of departure from North Korea,timenk calculation
+year_arrived_sk,numeric,Year of arrival in South Korea,timesk calculation
+reason_defection_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+residence_sk_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+education_sk_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+unemployed_raw,character,Current unemployment status item,preserved SI-relevant covariate source
+retired_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+political_orientation_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+party_preference_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+marital_status_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+religion_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
+national_identity_strength,numeric,National identity strength scale,retained background/list context variable
+direct_sk_pride,character,Direct question on pride in being South Korean,SK-pride direct outcome
+direct_nk_pride,character,Direct question on pride in North Korean origin,NK-pride direct outcome
+list_sk_pride_count,numeric,List count for pride in being South Korean,SK-pride list outcome
+list_nk_pride_count,numeric,List count for pride in North Korean origin,NK-pride list outcome
+list_sk_pride_treatment_arm,character,Raw treatment assignment for SK-pride list,treatskpride
+list_nk_pride_treatment_arm,character,Raw treatment assignment for NK-pride list,treatnkpride
