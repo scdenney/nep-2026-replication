@@ -20,6 +20,10 @@ This package replicates the **list experiments on national pride** from:
 
 The study uses list experiments (item-count technique) to measure social desirability bias in expressions of national pride across three populations: Taiwanese citizens, native South Koreans, and North Korean migrants in South Korea. By comparing direct survey responses with indirect list-experiment estimates, the analysis quantifies identity conformity pressures in divided societies with contested national identities.
 
+Replication materials are also archived on Harvard Dataverse.
+
+> Denney, Steven, and H. Christoph Steinhardt. 2026. “Replication Data for &quot;Identity Conformity in Taiwan and South Korea: Why Citizens in Divided Societies Are Pressured to Overstate National Pride&quot;” Harvard Dataverse. [https://doi.org/10.7910/DVN/ZSYQVF](https://doi.org/10.7910/DVN/ZSYQVF)
+
 ## Repository Structure
 
 ```
