@@ -1,35 +1,39 @@
 variable,type,description,used_in_script
-response_id,character,Respondent ID from the raw Taiwan survey export,retained background/list context variable
-birth_year_roc,numeric,Birth year in ROC (Minguo) calendar,age covariate construction
-gender,character,Gender demographic variable.,female indicator
-city_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-ideology_raw,character,Self-reported conservative/liberal placement,pol_id covariate
-party_id_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-residency_status_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-cross_strait_preference_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-identity_category_raw,character,Identity self-categorization (Taiwanese/Chinese/both/neither),strong/weak subgroup split
-direct_support_unification,character,Direct question on support for unification,retained background/list context variable
-direct_pride_taiwan,character,Direct question on pride in being Taiwanese,direct binary outcome
-direct_pride_china,character,Direct question on pride in being Chinese,retained background/list context variable
-education_years,numeric,Years of formal education,eduhigh covariate
-employment_status_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-work_type_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-current_status_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-home_language_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-father_origin_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-marital_status_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-social_media_use_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-follows_political_news_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-main_news_source_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-vote_2024_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-social_class_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-list_pride_treatment_indicator,numeric,List experiment treatment indicator/count (List1),List1.n
-list_independence_treatment_indicator,numeric,List-experiment variable.,retained background/list context variable
-list_pride_treatment_arm,character,List-experiment treatment-arm assignment from the survey flow.,retained background/list context variable
-list_independence_treatment_arm,character,List-experiment treatment-arm assignment from the survey flow.,retained background/list context variable
-list_pride_taiwan_treatment_count,numeric,Numeric list-experiment count response.,retained background/list context variable
-list_pride_china_treatment_count,numeric,Numeric list-experiment count response.,retained background/list context variable
-list_pride_control_count,numeric,Numeric list-experiment count response.,retained background/list context variable
-list_pride_taiwan_count,numeric,Observed list count for Taiwan-pride list experiment,list outcome
-list_independence_treatment_count,numeric,Numeric list-experiment count response.,retained background/list context variable
-list_independence_control_count,numeric,Numeric list-experiment count response.,retained background/list context variable
+response_id,character,Respondent identifier from the Taiwan survey export.,retained for transparency/provenance
+birth_year_roc,numeric,Birth year in ROC/Minguo calendar.,age covariate
+gender,character,Analysis sample variable retained for list-experiment replication.,female covariate
+city_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+ideology_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+party_id_raw,character,Analysis sample variable retained for list-experiment replication.,political identification covariate
+residency_status_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+cross_strait_preference_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+identity_category_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+taiwanese_identity_strength,numeric,0-10 Taiwanese identity strength scale used for strong/weak and Taiwanese-only splits.,Figure 1/2 subgroup construction
+chinese_identity_strength,numeric,0-10 Chinese identity strength scale used for Taiwanese-Chinese split.,Figure 2/4 subgroup construction
+chinese_nation_identity_strength,numeric,0-10 Chinese-nation identity strength scale retained from the source survey.,retained for transparency/provenance
+direct_support_independence,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+direct_pride_taiwan,character,Direct question on pride in being Taiwanese.,direct Taiwan-pride outcome
+direct_pride_china,character,Direct question on pride in being Chinese.,direct Chinese-pride outcome
+education_years,numeric,Analysis sample variable retained for list-experiment replication.,education covariate
+employment_status_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+work_type_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+current_status_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+home_language_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+father_origin_raw,character,Paternal origin item used to construct Benshengren/Waishengren groups.,Figure 3 subgroup construction
+marital_status_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+social_media_use_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+follows_political_news_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+main_news_source_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+vote_2024_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+social_class_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+list_pride_treatment_indicator,numeric,Analysis sample variable retained for list-experiment replication.,Taiwan pride list treatment variable
+list_independence_treatment_indicator,numeric,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+list_pride_treatment_arm,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+list_independence_treatment_arm,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+list_pride_taiwan_treatment_count,numeric,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+list_pride_china_treatment_count,numeric,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+list_pride_control_count,numeric,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+list_pride_taiwan_count,numeric,"Merged Taiwan-pride list count: Taiwan-pride treatment count where assigned, otherwise control count.",Taiwan pride list outcome
+list_pride_china_count,numeric,"Merged China-pride list count: China-pride treatment count where assigned, otherwise control count.",Chinese pride list outcome
+list_independence_treatment_count,numeric,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+list_independence_control_count,numeric,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance

@@ -70,7 +70,7 @@ All covariate construction (binary indicators, subgroup splits) is performed tra
 source("run_replication.R")
 
 # Option 2: Manual
-install.packages(c("dplyr", "ggplot2", "readr", "stringr", "tibble", "list", "tidyr"))
+install.packages(c("dplyr", "ggplot2", "readr", "stringr", "tibble", "list", "tidyr", "mice"))
 source("code/run_all.R")
 ```
 
@@ -83,32 +83,29 @@ Outputs: `outputs/results/` (CSVs) and `outputs/figures/` (PDF).
 
 ## Figure Mapping
 
-### Main paper
-
 | Paper Figure | Description | Output file |
 |:------------:|-------------|-------------|
-| 4 | Taiwan & South Korea: direct vs. list by identity strength | `SI_List_Experiment_Main.pdf` |
-| 5 | South Korea & NK migrants: pride comparison | `Figure_5_generated.pdf` |
+| 1 | National pride by identity strength in Taiwan and South Korea | `outputs/figures/Figure 1.pdf` |
+| 2 | Pride in being Taiwanese by subjective identity subgroup | `outputs/figures/Figure 2.pdf` |
+| 3 | Pride in being Taiwanese by paternal-origin subgroup | `outputs/figures/Figure 3.pdf` |
+| 4 | Pride in being Chinese by subjective identity subgroup | `outputs/figures/Figure 4.pdf` |
+| 5 | Pride in being South Korean among native South Koreans and North Korean migrants | `outputs/figures/Figure 5.pdf` |
 
-### Supplementary Information
-
-| SI Figure | Description | Output file |
-|:---------:|-------------|-------------|
-| E.1 | Taiwan independence robustness | (see analysis code) |
-| E.2 | South Korea NSA/unification robustness | (see analysis code) |
+The model estimates and confidence intervals for all five figures are written to
+`outputs/results/list_experiment_estimates.csv`.
 
 ## Samples
 
 | Sample | Respondents | List items | Recruitment |
 |--------|:-----------:|:----------:|-------------|
 | Taiwan | 2,050 | 3-item list | Qualtrics online panel |
-| South Korea | 1,994 | 4-item list | Qualtrics online panel |
+| South Korea | 1,998 | 4-item list | Qualtrics online panel |
 | North Korean migrants | 301 | 3-item list | Woorion NGO |
 
 ## Requirements
 
 - **R** >= 4.0
-- [`dplyr`](https://dplyr.tidyverse.org/), [`ggplot2`](https://ggplot2.tidyverse.org/), [`readr`](https://readr.tidyverse.org/), [`stringr`](https://stringr.tidyverse.org/), [`tibble`](https://tibble.tidyverse.org/), [`list`](https://cran.r-project.org/package=list), [`tidyr`](https://tidyr.tidyverse.org/)
+- [`dplyr`](https://dplyr.tidyverse.org/), [`ggplot2`](https://ggplot2.tidyverse.org/), [`readr`](https://readr.tidyverse.org/), [`stringr`](https://stringr.tidyverse.org/), [`tibble`](https://tibble.tidyverse.org/), [`list`](https://cran.r-project.org/package=list), [`tidyr`](https://tidyr.tidyverse.org/), [`mice`](https://cran.r-project.org/package=mice)
 
 ## License
 

@@ -16,7 +16,7 @@ dir.create(out_samples, recursive = TRUE, showWarnings = FALSE)
 dir.create(out_dict, recursive = TRUE, showWarnings = FALSE)
 
 required_raw <- c(
-  file.path(raw_dir, "ROC24", "ROC Experiments 2023_February 15, 2024_02.14.csv"),
+  file.path(raw_dir, "ROC24", "ROC Experiments 2023_May 6, 2024_23.19.csv"),
   file.path(raw_dir, "ROK23", "ROK 24.1 Experiments_May 7, 2024_09.24.csv")
 )
 missing <- required_raw[!file.exists(required_raw)]
@@ -82,7 +82,7 @@ make_dictionary <- function(df, descriptions, used_in_script, default_desc) {
 
 # Taiwan ----------------------------------------------------------------------
 tw_raw <- read_csv(
-  file.path(raw_dir, "ROC24", "ROC Experiments 2023_February 15, 2024_02.14.csv"),
+  file.path(raw_dir, "ROC24", "ROC Experiments 2023_May 6, 2024_23.19.csv"),
   show_col_types = FALSE
 ) |>
   slice(-c(1, 2)) |>
@@ -99,7 +99,10 @@ tw <- tw_raw |>
     residency_status_raw = Q6,
     cross_strait_preference_raw = Q28,
     identity_category_raw = Q28_2,
-    direct_support_unification = Q29,
+    taiwanese_identity_strength = norm_num(`Q11_1...126`),
+    chinese_identity_strength = norm_num(Q12_1),
+    chinese_nation_identity_strength = norm_num(Q13_1),
+    direct_support_independence = Q29,
     direct_pride_taiwan = Q30,
     direct_pride_china = Q31,
     education_years = norm_num(Q32),
@@ -131,6 +134,7 @@ tw <- tw_raw |>
     list_pride_china_treatment_count = norm_num(Q10_2),
     list_pride_control_count = norm_num(Q10_3),
     list_pride_taiwan_count = dplyr::coalesce(list_pride_taiwan_treatment_count, list_pride_control_count),
+    list_pride_china_count = dplyr::coalesce(list_pride_china_treatment_count, list_pride_control_count),
     list_independence_treatment_count = norm_num(`Q11_1...120`),
     list_independence_control_count = norm_num(Q11_2)
   )
@@ -146,6 +150,7 @@ kr_raw <- read_csv(
 kr <- kr_raw |>
   transmute(
     response_id = ResponseId,
+    random_text_flag = RandomTextFlag,
     gender = `Q2...23`,
     region_raw = Q3,
     age = norm_num(`Q4...25`),
@@ -155,6 +160,7 @@ kr <- kr_raw |>
     party_id_raw = `Q14...33`,
     religion_raw = Q85,
     direct_pride_korea = Q69,
+    direct_pride_korea_initial = Q9,
     list_pride_count = norm_num(str_trim(Q62)),
     list_pride_treatment_arm = ListKoreanPride_DO,
     direct_nksk_maintain = Q26,
@@ -171,30 +177,30 @@ nk_values_raw <- if (file.exists(nk_choice_path)) {
 }
 
 # Reproduce the original qmd-style NK analytic cohort construction (N=301).
-nk_cohort_ids <- if (file.exists(nk_choice_path)) {
-  nk_translations <- c(
-    `강원도` = "Gangwon Province",
-    `개성` = "Kaesong",
-    `남포` = "Nampo",
-    `라진-선봉` = "Rason",
-    `량강도` = "Ryanggang Province",
-    `자강도` = "Jagang Province",
-    `평안남도` = "South Pyongan Province",
-    `평안북도` = "North Pyongan Province",
-    `평양` = "Pyongyang",
-    `함경남도` = "South Hamgyong Province",
-    `함경북도` = "North Hamgyong Province",
-    `황해남도` = "South Hwanghae Province",
-    `황해북도` = "North Hwanghae Province"
-  )
-  nk_borderlands <- c(
-    "North Pyongan Province",
-    "Jagang Province",
-    "Ryanggang Province",
-    "North Hamgyong Province",
-    "Rason"
-  )
+nk_translations <- c(
+  `강원도` = "Gangwon Province",
+  `개성` = "Kaesong",
+  `남포` = "Nampo",
+  `라진-선봉` = "Rason",
+  `량강도` = "Ryanggang Province",
+  `자강도` = "Jagang Province",
+  `평안남도` = "South Pyongan Province",
+  `평안북도` = "North Pyongan Province",
+  `평양` = "Pyongyang",
+  `함경남도` = "South Hamgyong Province",
+  `함경북도` = "North Hamgyong Province",
+  `황해남도` = "South Hwanghae Province",
+  `황해북도` = "North Hwanghae Province"
+)
+nk_borderlands <- c(
+  "North Pyongan Province",
+  "Jagang Province",
+  "Ryanggang Province",
+  "North Hamgyong Province",
+  "Rason"
+)
 
+nk_cohort_ids <- if (file.exists(nk_choice_path)) {
   nk_values_raw |>
     transmute(
       ResponseId = ResponseId,
@@ -247,7 +253,18 @@ nk <- nk_raw |>
     gender = Q6,
     birth_year = norm_num(`Q2...20`),
     birth_place_raw = `Q3...21`,
+    birth_place_english = dplyr::recode(birth_place_raw, !!!nk_translations, .default = birth_place_raw),
+    border_region = if_else(birth_place_english %in% nk_borderlands, 1, 0),
+    capital_region = if_else(birth_place_english == "Pyongyang", 1, 0),
     education_nk_raw = Q7,
+    education_nk_english = dplyr::recode(
+      ifelse(Q7 == "기타", "인민학교 이하", Q7),
+      "인민학교 이하" = "Elementary or below",
+      "고등중학교 중등반(1-3년) 졸업" = "Lower secondary (1-3 years)",
+      "고등중학교 고등반(4-6년) 졸업" = "Upper secondary (4-6 years)",
+      "전문대학교 (2년) 졸업, 기술고급중학교" = "2-year technical college, vocational high school",
+      "대학교 (3-4년) 졸업" = "University (3-4 years)"
+    ),
     father_party_member_raw = Q12,
     mother_party_member_raw = Q14,
     party_member_raw = Q15,
@@ -278,7 +295,7 @@ write_csv(nk, file.path(out_samples, "nk_list.csv"), na = "")
 
 target_counts_si_text <- c(
   tw_list = 2050L,
-  kr_list = 1994L,
+  kr_list = 1998L,
   nk_list = 301L
 )
 realized_counts <- c(
@@ -304,7 +321,11 @@ tw_used <- c(
   list_pride_treatment_indicator = "List1.n",
   list_pride_taiwan_count = "list outcome",
   direct_pride_taiwan = "direct binary outcome",
-  identity_category_raw = "strong/weak subgroup split"
+  direct_pride_china = "direct binary outcome for Chinese pride",
+  taiwanese_identity_strength = "Taiwan strong/weak subgroup split",
+  chinese_identity_strength = "Taiwanese-only and Taiwanese-Chinese subgroup split",
+  chinese_nation_identity_strength = "retained identity-strength measure",
+  list_pride_china_count = "Chinese-pride list outcome"
 )
 
 kr_used <- c(
@@ -339,12 +360,16 @@ tw_desc <- c(
   birth_year_roc = "Birth year in ROC (Minguo) calendar",
   ideology_raw = "Self-reported conservative/liberal placement",
   identity_category_raw = "Identity self-categorization (Taiwanese/Chinese/both/neither)",
+  taiwanese_identity_strength = "Taiwanese identity strength scale",
+  chinese_identity_strength = "Chinese identity strength scale",
+  chinese_nation_identity_strength = "Chinese nation identity strength scale",
   education_years = "Years of formal education",
   direct_pride_taiwan = "Direct question on pride in being Taiwanese",
   direct_pride_china = "Direct question on pride in being Chinese",
-  direct_support_unification = "Direct question on support for unification",
+  direct_support_independence = "Direct question on support for Taiwan independence",
   list_pride_treatment_indicator = "List experiment treatment indicator/count (List1)",
-  list_pride_taiwan_count = "Observed list count for Taiwan-pride list experiment"
+  list_pride_taiwan_count = "Observed list count for Taiwan-pride list experiment",
+  list_pride_china_count = "Observed list count for China-pride list experiment"
 )
 
 kr_desc <- c(

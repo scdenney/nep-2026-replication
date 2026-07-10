@@ -5,7 +5,8 @@ required_packages <- c(
   "stringr",
   "tibble",
   "list",
-  "tidyr"
+  "tidyr",
+  "mice"
 )
 
 options(repos = c(CRAN = "https://cloud.r-project.org"))

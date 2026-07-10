@@ -1,17 +1,19 @@
 variable,type,description,used_in_script
-response_id,character,Respondent ID from the raw South Korea survey export,retained background/list context variable
-gender,character,Gender demographic variable.,female indicator
-region_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-age,numeric,Age or year-based demographic variable.,age covariate
-education_raw,character,Raw survey response value (verbatim coding).,eduhigh covariate
-residency_status_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-ideology_scale_raw,character,Raw ideology scale response,political_orientation covariate
-party_id_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-religion_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-direct_pride_korea,character,Direct question on pride in being South Korean,direct binary outcome
-list_pride_count,numeric,List count for pride in being South Korean,list model outcome
-list_pride_treatment_arm,character,Raw treatment assignment for the pride list experiment,treatment indicator
-direct_nksk_maintain,character,Direct question on maintaining North-South separation,retained background/list context variable
-list_nksk_count,numeric,List count for North-South maintenance list experiment,retained background/list context variable
-list_nksk_treatment_arm,character,Raw treatment assignment for North-South maintenance list experiment,retained background/list context variable
-national_identity_strength,numeric,National identity strength scale,strong/weak subgroup split
+response_id,character,Respondent identifier from the South Korea survey export.,retained for transparency/provenance
+random_text_flag,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+gender,character,Analysis sample variable retained for list-experiment replication.,female covariate
+region_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+age,numeric,Analysis sample variable retained for list-experiment replication.,age covariate
+education_raw,character,Analysis sample variable retained for list-experiment replication.,education covariate
+residency_status_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+ideology_scale_raw,character,Raw ideology scale response.,political orientation covariate
+party_id_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+religion_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+direct_pride_korea,character,Direct question on pride in being South Korean.,direct South Korean pride outcome
+direct_pride_korea_initial,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+list_pride_count,numeric,List count for pride in being South Korean.,South Korean pride list outcome
+list_pride_treatment_arm,character,Treatment assignment for the South Korean pride list experiment.,South Korean pride list treatment variable
+direct_nksk_maintain,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+list_nksk_count,numeric,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+list_nksk_treatment_arm,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+national_identity_strength,numeric,0-10 South Korean identity strength scale.,Figure 1 strong/weak subgroup construction

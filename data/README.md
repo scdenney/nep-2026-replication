@@ -11,7 +11,7 @@ One shareable analysis file per sample. Each file includes:
 | File | Sample | Respondents |
 |------|--------|:-----------:|
 | `samples/tw_list.csv` | Taiwan | 2,050 |
-| `samples/kr_list.csv` | South Korea | 1,994 |
+| `samples/kr_list.csv` | South Korea | 1,998 |
 | `samples/nk_list.csv` | North Korean migrants | 301 |
 
 ## Data dictionaries

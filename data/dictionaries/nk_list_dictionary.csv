@@ -1,27 +1,31 @@
 variable,type,description,used_in_script
-response_id,character,Respondent ID from the raw North Korean migrant survey export,retained background/list context variable
-gender,character,Gender demographic variable.,female indicator
-birth_year,numeric,Birth year,timenk calculation
-birth_place_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-education_nk_raw,character,Education level in North Korea,preserved SI-relevant covariate source
-father_party_member_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-mother_party_member_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-party_member_raw,character,Whether respondent was a Workers' Party member,retained for SI robustness variants and provenance
-year_defection,numeric,Year of departure from North Korea,timenk calculation
-year_arrived_sk,numeric,Year of arrival in South Korea,timesk calculation
-reason_defection_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-residence_sk_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-education_sk_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-unemployed_raw,character,Current unemployment status item,preserved SI-relevant covariate source
-retired_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-political_orientation_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-party_preference_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-marital_status_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-religion_raw,character,Raw survey response value (verbatim coding).,retained background/list context variable
-national_identity_strength,numeric,National identity strength scale,retained background/list context variable
-direct_sk_pride,character,Direct question on pride in being South Korean,SK-pride direct outcome
-direct_nk_pride,character,Direct question on pride in North Korean origin,NK-pride direct outcome
-list_sk_pride_count,numeric,List count for pride in being South Korean,SK-pride list outcome
-list_nk_pride_count,numeric,List count for pride in North Korean origin,NK-pride list outcome
-list_sk_pride_treatment_arm,character,Raw treatment assignment for SK-pride list,treatskpride
-list_nk_pride_treatment_arm,character,Raw treatment assignment for NK-pride list,treatnkpride
+response_id,character,Respondent identifier from the North Korean migrant survey export.,retained for transparency/provenance
+gender,character,Analysis sample variable retained for list-experiment replication.,female covariate/imputation variable
+birth_year,numeric,Analysis sample variable retained for list-experiment replication.,timenk and age construction
+birth_place_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+birth_place_english,character,Translated province/place of birth.,imputation/provenance variable
+border_region,numeric,Indicator for North Korean borderland origin.,imputation/provenance variable
+capital_region,numeric,Indicator for Pyongyang origin.,imputation/provenance variable
+education_nk_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+education_nk_english,character,Translated North Korean education category.,imputation/provenance variable
+father_party_member_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+mother_party_member_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+party_member_raw,character,Analysis sample variable retained for list-experiment replication.,imputation variable
+year_defection,numeric,Analysis sample variable retained for list-experiment replication.,timenk covariate
+year_arrived_sk,numeric,Analysis sample variable retained for list-experiment replication.,timesk covariate
+reason_defection_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+residence_sk_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+education_sk_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+unemployed_raw,character,Analysis sample variable retained for list-experiment replication.,imputation variable
+retired_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+political_orientation_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+party_preference_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+marital_status_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+religion_raw,character,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+national_identity_strength,numeric,Analysis sample variable retained for list-experiment replication.,retained for transparency/provenance
+direct_sk_pride,character,Direct question on pride in being South Korean.,direct South Korean pride outcome
+direct_nk_pride,character,Direct question on pride in being from North Korea.,direct North Korean-origin pride outcome
+list_sk_pride_count,numeric,List count for South Korean pride.,South Korean pride list outcome
+list_nk_pride_count,numeric,List count for North Korean-origin pride.,North Korean-origin pride list outcome
+list_sk_pride_treatment_arm,character,Analysis sample variable retained for list-experiment replication.,South Korean pride list treatment variable
+list_nk_pride_treatment_arm,character,Analysis sample variable retained for list-experiment replication.,North Korean-origin pride list treatment variable
